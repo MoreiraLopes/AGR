@@ -1,0 +1,333 @@
+==========
+| Coimbra | 
+==========
+
+
+conf t
+int f0/0
+no shut 
+ip address 192.88.123.3 255.255.255.192
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+
+neighbor 192.88.123.1 remote-as 8657
+neighbor 192.88.123.1 next-hop-self
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.2 next-hop-self
+neighbor 192.88.123.4 remote-as 8657
+neighbor 192.88.123.4 next-hop-self
+
+end 
+write
+
+
+==========
+| Aveiro | 
+==========
+
+
+conf t
+int f0/0
+no shut 
+ip address 192.88.123.4 255.255.255.192
+int f0/1
+no shut
+ip address 192.88.124.1 255.255.255.252
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+network 192.88.124.0 mask 255.255.255.252
+
+neighbor 192.88.123.1 remote-as 8657
+neighbor 192.88.123.1 next-hop-self
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.2 next-hop-self
+neighbor 192.88.123.3 remote-as 8657
+neighbor 192.88.123.3 next-hop-self
+
+end 
+write
+
+
+==================
+| Company@Aveiro | 
+==================
+
+conf t
+int f0/0
+no shut
+ip address 192.88.124.2 255.255.255.252
+int f0/1
+no shut
+ip address 192.88.125.1 255.255.255.128 
+end 
+write
+
+==========
+|  Porto  | 
+==========
+
+
+conf t
+int f0/0
+no shut
+ip address 192.88.123.1 255.255.255.192
+int f1/0
+no shut 
+ip address 192.88.124.9 255.255.255.252
+int f0/1
+no shut
+ip address 192.122.12.133 255.255.255.252
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+network 192.88.124.8 mask 255.255.255.252
+network 192.122.12.132 mask 255.255.255.252
+
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.2 next-hop-self
+neighbor 192.88.123.3 remote-as 8657
+neighbor 192.88.123.3 next-hop-self
+neighbor 192.88.123.4 remote-as 8657
+neighbor 192.88.123.4 next-hop-self
+
+neighbor 192.88.124.10 remote-as 4891
+neighbor 192.122.12.134 remote-as 4589
+end 
+write
+
+
+==========
+|  Lisboa  | 
+==========
+
+
+conf t
+int f0/0
+no shut
+ip address 192.88.123.2 255.255.255.192
+int f0/1
+no shut
+ip address 192.88.124.5 255.255.255.192
+int f1/0
+no shut 
+ip address 192.122.12.130 255.255.255.252
+
+
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+network 192.88.124.4 mask 255.255.255.252
+network 192.122.12.128 mask 255.255.255.252
+
+
+neighbor 192.88.123.1 remote-as 8657
+neighbor 192.88.123.1 next-hop-self
+neighbor 192.88.123.3 remote-as 8657
+neighbor 192.88.123.3 next-hop-self
+neighbor 192.88.123.4 remote-as 8657
+neighbor 192.88.123.4 next-hop-self
+
+neighbor 192.122.12.129 remote-as 4589
+end 
+write
+
+
+==================
+| Company@Lisboa | 
+==================
+
+conf t
+int f0/0
+no shut
+ip address 192.88.124.6 255.255.255.252
+int f0/1
+no shut
+ip address 192.88.125.129 255.255.255.128 
+end 
+write
+
+
+=============
+|  Londres  | 
+=============
+
+conf t
+
+int f0/0
+no shut 
+ip address 192.122.12.138 255.255.255.252
+int f0/1
+no shut 
+ip address 192.122.12.134 255.255.255.252
+int f1/0
+no shut
+ip address 192.122.12.129 255.255.255.252
+int f2/0
+no shut
+ip address 192.122.12.1 255.255.255.128
+
+router  bgp 4589
+network 192.122.12.128 mask 255.255.255.252
+network 192.122.12.132 mask 255.255.255.252
+network 192.122.12.136 mask 255.255.255.252
+network 192.122.12.0 mask 255.255.255.128
+
+neighbor 192.122.12.133 remote-as 8657
+neighbor 192.122.12.137 remote-as 4891
+neighbor 192.122.12.130 remote-as 8657
+
+end 
+write
+
+
+
+==========
+|  Vigo  | 
+==========
+
+conf t
+int f0/0
+no shut
+ip address 192.90.12.1 255.255.255.0
+int f0/1
+no shut 
+ip address 192.88.124.10 255.255.255.252
+int f1/0
+no shut 
+ip address 192.122.12.137 255.255.255.252
+
+router  bgp 4891
+network 192.88.124.8 mask 255.255.255.252
+network 192.122.12.136 mask 255.255.255.252
+network 192.90.12.0 mask 255.255.255.0
+
+neighbor 192.88.124.9 remote-as 8657
+neighbor 192.122.12.138 remote-as 4589
+
+end 
+write
+
+=====
+|PC1| 
+=====
+ip 192.90.12.2/24 192.90.12.1
+save
+
+=====
+|PC2| 
+=====
+ip 192.122.12.2/25 192.122.12.1
+save
+
+
+=====
+|PC3| 
+=====
+ip 192.88.125.130/25 192.88.125.129
+save
+
+=====
+|PC4| 
+=====
+ip 192.88.125.2/25 192.88.125.1
+save
+
+
+
+====================
+| 2Parte da config | 
+====================
+==========
+| Coimbra | 
+==========
+
+conf t
+router bgp 8657
+neighbor 192.88.123.2 route-map COIMBRA-IN in
+
+route-map COIMBRA permit 10
+match community 8657:1
+set local-preference 100
+
+route-map COIMBRA permit 20
+match community 8657:2
+set local-preference 200
+
+end
+write
+
+
+
+
+==========
+| Aveiro | 
+==========
+
+conf t
+router bgp 8657
+neighbor 192.88.123.1 route-map TO_PORTO out
+
+route-map TO_PORTO permit 10
+match community 8657:1
+set local-preference 200
+
+route-map TO_PORTO permit 20
+match community 8657:2
+set local-preference 100
+
+end
+write
+
+
+
+
+==========
+|  Porto  | 
+==========
+
+conf t
+router bgp 8657
+neighbor 192.88.123.2 route-map PORTO-OUT out
+
+route-map PORTO-OUT permit 10
+match ip address 10
+set community 8657:1
+
+access-list 10 permit any
+
+end
+write
+
+
+
+
+============
+|  Lisboa  | 
+============
+
+conf t
+router bgp 8657
+neighbor 192.88.123.1 route-map LISBOA-OUT out
+route-map LISBOA-OUT permit 10
+match ip address 10
+set community 8657:2
+access-list 10 permit any
+
+end
+write
+
+
+==========
+|  Vigo  | 
+==========
+
+conf t
+ip prefix-list VigoOwns seq 10 permit 192.88.124.8/30
+ip prefix-list VigoOwns seq 20 permit 192.122.12.136/30
+router bgp 4891
+ neighbor 192.122.12.138 prefix-list VigoOwns out
+end
+write
+

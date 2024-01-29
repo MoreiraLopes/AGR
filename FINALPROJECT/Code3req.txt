@@ -1,0 +1,249 @@
+==========
+| Coimbra | 
+==========
+
+
+conf t
+int f0/0
+no shut 
+ip address 192.88.123.3 255.255.255.192
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+
+neighbor 192.88.123.1 remote-as 8657
+neighbor 192.88.123.1 next-hop-self
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.2 next-hop-self
+neighbor 192.88.123.4 remote-as 8657
+neighbor 192.88.123.4 next-hop-self
+
+end 
+write
+
+==========
+| Aveiro | 
+==========
+
+
+conf t
+int f0/0
+no shut 
+ip address 192.88.123.4 255.255.255.192
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+
+neighbor 192.88.123.1 remote-as 8657
+neighbor 192.88.123.1 next-hop-self
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.2 next-hop-self
+neighbor 192.88.123.3 remote-as 8657
+neighbor 192.88.123.3 next-hop-self
+
+end 
+write
+
+
+conf t
+crypto isakmp policy 10
+encr aes 256
+authentication pre-share
+crypto isakmp key labcom address 192.88.123.2
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile ARipsec
+set transform-set cipherT authT auth_ciphT
+
+interface Tunnel 0
+bandwidth 2000
+ip address 10.0.0.1 255.255.255.252 
+tunnel source 192.88.123.4 
+tunnel destination 192.88.123.2
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile ARipsec
+exit
+
+router OSPF 1
+network 10.0.0.1 255.255.255.252 area 0
+end 
+write
+
+
+
+==========
+|  Porto  | 
+==========
+
+
+conf t
+int f0/0
+no shut
+ip address 192.88.123.1 255.255.255.192
+int f1/0
+no shut 
+ip address 192.88.124.9 255.255.255.252
+int f0/1
+no shut
+ip address 192.122.12.133 255.255.255.252
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+network 192.88.124.8 mask 255.255.255.252
+network 192.122.12.132 mask 255.255.255.252
+
+neighbor 192.88.123.3 remote-as 8657
+neighbor 192.88.123.3 next-hop-self
+neighbor 192.88.123.2 remote-as 8657
+neighbor 192.88.123.2 next-hop-self
+neighbor 192.88.123.4 remote-as 8657
+neighbor 192.88.123.4 next-hop-self
+
+neighbor 192.88.124.10 remote-as 4891
+neighbor 192.122.12.134 remote-as 4589
+end 
+write
+
+
+
+==========
+|  Lisboa  | 
+==========
+
+
+conf t
+int f0/0
+no shut
+ip address 192.88.123.2 255.255.255.192
+int f1/0
+no shut 
+ip address 192.122.12.130 255.255.255.252
+
+
+
+router  bgp 8657
+network 192.88.123.0 mask 255.255.255.192
+network 192.88.124.4 mask 255.255.255.252
+network 192.122.12.128 mask 255.255.255.252
+
+neighbor 192.88.123.3 remote-as 8657
+neighbor 192.88.123.3 next-hop-self
+neighbor 192.88.123.1 remote-as 8657
+neighbor 192.88.123.1 next-hop-self
+neighbor 192.88.123.4 remote-as 8657
+neighbor 192.88.123.4 next-hop-self
+
+neighbor 192.122.12.129 remote-as 4589
+end 
+write
+
+
+conf t
+crypto isakmp policy 10
+encr aes 256
+authentication pre-share
+crypto isakmp key labcom address 192.88.123.4
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile ARipsec
+set transform-set cipherT authT auth_ciphT
+
+interface Tunnel 0
+bandwidth 2000
+ip address 10.0.0.2 255.255.255.252
+tunnel source 192.88.123.2
+tunnel destination 192.88.123.4
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile ARipsec
+exit
+ 
+router OSPF 1
+network 10.0.0.2 255.255.255.252 area 0
+end
+write
+
+
+
+=============
+|  Londres  | 
+=============
+
+conf t
+
+int f0/0
+no shut 
+ip address 192.122.12.138 255.255.255.252
+int f0/1
+no shut 
+ip address 192.122.12.134 255.255.255.252
+int f1/0
+no shut
+ip address 192.122.12.129 255.255.255.252
+
+router  bgp 4589
+network 192.122.12.128 mask 255.255.255.252
+network 192.122.12.132 mask 255.255.255.252
+network 192.122.12.136 mask 255.255.255.252
+
+neighbor 192.122.12.133 remote-as 8657
+neighbor 192.122.12.137 remote-as 4891
+neighbor 192.122.12.130 remote-as 8657
+
+end 
+write
+
+
+
+==========
+|  Vigo  | 
+==========
+
+conf t
+int f0/1
+no shut 
+ip address 192.88.124.10 255.255.255.252
+int f1/0
+no shut 
+ip address 192.122.12.137 255.255.255.252
+
+router  bgp 4891
+network 192.88.124.8 mask 255.255.255.252
+network 192.122.12.136 mask 255.255.255.252
+
+neighbor 192.88.124.9 remote-as 8657
+neighbor 192.122.12.138 remote-as 4589
+
+end 
+write
+
+
+
+
+
+
+
+
+
+=======================
+|  Comandos de teste  | 
+=======================
+--------Em Aveiro e Lisboa--------
+
+show interface tunnel 0
+show ip interface brief | include Tunnel0
+show ip route
+show ip bgp summary
+show ip bgp neighbors
+
+show crypto isakmp sa
+show crypto ipsec sa
+
+
+--------Em Aveiro--------
+ping 10.0.0.2
+
+show interface tunnel 0
+show crypto ipsec sa
+

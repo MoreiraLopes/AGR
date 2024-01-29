@@ -1,0 +1,43 @@
+Jan 23 00:25:12.121 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Jan 23 00:25:12.121 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 55551.
+Jan 23 00:25:12.131 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 23 00:25:12.132 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips 
+Jan 23 00:25:12.132 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips
+Jan 23 00:25:12.132 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/a79894de-70f0-4de0-ac53-64873ad37cfb 
+Jan 23 00:25:12.132 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/a79894de-70f0-4de0-ac53-64873ad37cfb
+Jan 23 00:25:12.133 HYPERVISOR: exec_cmd: vm create CompanyA-Aveiro 8 c3725 
+Jan 23 00:25:12.133 VM: VM CompanyA-Aveiro created.
+Jan 23 00:25:12.134 HYPERVISOR: exec_cmd: vm set_con_tcp_port CompanyA-Aveiro 5024 
+Jan 23 00:25:12.134 HYPERVISOR: exec_cmd: c3725 get_mac_addr CompanyA-Aveiro 
+Jan 23 00:25:12.135 HYPERVISOR: exec_cmd: vm set_disk0 CompanyA-Aveiro 0 
+Jan 23 00:25:12.136 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:25:12.137 HYPERVISOR: exec_cmd: vm set_idle_pc CompanyA-Aveiro 0x602361d8 
+Jan 23 00:25:12.138 HYPERVISOR: exec_cmd: vm set_ios CompanyA-Aveiro /home/goncalo/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jan 23 00:25:12.139 HYPERVISOR: exec_cmd: c3725 set_mac_addr CompanyA-Aveiro c208.687a.0000 
+Jan 23 00:25:12.140 HYPERVISOR: exec_cmd: vm set_nvram CompanyA-Aveiro 256 
+Jan 23 00:25:12.140 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:25:12.141 HYPERVISOR: exec_cmd: vm slot_add_binding CompanyA-Aveiro 1 0 NM-1FE-TX 
+Jan 23 00:25:12.142 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:25:12.142 HYPERVISOR: exec_cmd: vm slot_add_binding CompanyA-Aveiro 2 0 NM-1FE-TX 
+Jan 23 00:25:13.303 HYPERVISOR: exec_cmd: nio create_udp udp-9bfa15d3-6d17-4e00-ae83-84665b88e1e2 10016 127.0.0.1 10017 
+Jan 23 00:25:13.516 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CompanyA-Aveiro 0 1 udp-9bfa15d3-6d17-4e00-ae83-84665b88e1e2 
+Jan 23 00:25:13.517 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:25:14.176 HYPERVISOR: exec_cmd: nio create_udp udp-d45a3708-1381-40cc-8479-c73eba9b9b82 10028 127.0.0.1 10029 
+Jan 23 00:25:14.177 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CompanyA-Aveiro 0 0 udp-d45a3708-1381-40cc-8479-c73eba9b9b82 
+Jan 23 00:25:14.178 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:29:57.510 HYPERVISOR: exec_cmd: vm set_ghost_status CompanyA-Aveiro 2 
+Jan 23 00:29:57.510 HYPERVISOR: exec_cmd: vm set_ghost_file CompanyA-Aveiro /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/c3725-advipservicesk9-mz.124-21.image-128.ghost 
+Jan 23 00:29:57.510 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:29:57.511 HYPERVISOR: exec_cmd: vm set_config CompanyA-Aveiro configs/i8_startup-config.cfg 
+Jan 23 00:29:57.511 HYPERVISOR: exec_cmd: vm start CompanyA-Aveiro 
+Jan 23 00:40:05.026 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:40:05.026 HYPERVISOR: exec_cmd: vm stop CompanyA-Aveiro 
+Jan 23 00:40:05.123 VM: VM CompanyA-Aveiro shutdown.
+Jan 23 00:40:05.123 HYPERVISOR: exec_cmd: vm extract_config CompanyA-Aveiro 
+Jan 23 00:40:05.674 HYPERVISOR: exec_cmd: vm get_status CompanyA-Aveiro 
+Jan 23 00:40:05.675 HYPERVISOR: exec_cmd: vm extract_config CompanyA-Aveiro 
+Jan 23 00:40:05.677 HYPERVISOR: exec_cmd: vm delete CompanyA-Aveiro 
+Jan 23 00:40:05.677 VM: VM CompanyA-Aveiro destroyed.
+Jan 23 00:40:05.678 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 23 00:40:05.899 HYPERVISOR: Stopped.
+Jan 23 00:40:05.899 GENERAL: reset done.

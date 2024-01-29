@@ -1,0 +1,119 @@
+==========
+| Coimbra | 
+==========
+
+conf t
+route-map TAG_COMMUNITY permit 10
+ set community 8657:2
+router bgp 8657
+ network 192.88.123.0 mask 255.255.255.192
+ neighbor 192.88.123.2 route-map TAG_COMMUNITY out
+end
+write
+
+==========
+| Aveiro | 
+==========
+conf t
+route-map TAG_COMMUNITY permit 10
+ set community 8657:1
+router bgp 8657
+ network 192.88.124.0 mask 255.255.255.192
+ neighbor 192.88.123.1 route-map TAG_COMMUNITY out
+end
+write
+
+==========
+|  Porto  | 
+==========
+
+conf t
+router bgp 8657
+ neighbor 192.88.123.4 route-map SET_LOCAL_PREF in
+end
+write
+
+
+conf t
+ip bgp-community new-format
+
+route-map SET_LOCAL_PREF permit 10
+ match community 8657:1
+ set weight 8
+
+route-map SET_LOCAL_PREF permit 10
+ match community 8657:2
+ set weight 8
+end
+write
+
+============
+|  Lisboa  | 
+============
+
+conf t
+router bgp 8657
+ neighbor 192.88.123.3 route-map SET_LOCAL_PREF in
+end
+write
+
+
+conf t
+ip bgp-community new-format
+
+route-map SET_LOCAL_PREF permit 10
+ match community 8657:2
+ set weight 10
+end
+write
+
+
+
+===================
+|  Isto não é   | 
+===================
+==========
+|  Vigo  | 
+==========
+
+conf t
+ip prefix-list VigoOwns seq 10 permit 192.88.124.8/30
+ip prefix-list VigoOwns seq 20 permit 192.122.12.136/30
+router bgp 4891
+ neighbor 192.122.12.138 prefix-list VigoOwns out
+end
+write
+
+
+
+
+
+
+
+==========
+|  Porto  | 
+==========
+
+conf t
+ip prefix-list PortoOwns seq 10 permit 192.88.123.0/26
+ip prefix-list PortoOwns seq 20 permit 192.88.124.8/30
+router bgp 8657
+ neighbor 192.122.12.134 prefix-list PortoOwns out
+end
+write
+
+
+
+
+============
+|  Lisboa  | 
+============
+
+
+conf t
+ip prefix-list LisboaOwns seq 10 permit 192.88.123.0/26
+ip prefix-list LisboaOwns seq 20 permit 192.88.124.4/30
+router bgp 8657
+ neighbor 192.122.12.129 prefix-list LisboaOwns out
+end
+write

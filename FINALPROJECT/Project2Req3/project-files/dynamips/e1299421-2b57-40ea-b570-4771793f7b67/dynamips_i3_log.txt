@@ -1,0 +1,46 @@
+Jan 23 00:25:11.973 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Jan 23 00:25:11.973 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 43783.
+Jan 23 00:25:11.982 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 23 00:25:11.982 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips 
+Jan 23 00:25:11.982 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips
+Jan 23 00:25:11.982 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/e1299421-2b57-40ea-b570-4771793f7b67 
+Jan 23 00:25:11.982 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/e1299421-2b57-40ea-b570-4771793f7b67
+Jan 23 00:25:11.982 HYPERVISOR: exec_cmd: vm create Porto 3 c3725 
+Jan 23 00:25:11.982 VM: VM Porto created.
+Jan 23 00:25:11.983 HYPERVISOR: exec_cmd: vm set_con_tcp_port Porto 5019 
+Jan 23 00:25:11.983 HYPERVISOR: exec_cmd: c3725 get_mac_addr Porto 
+Jan 23 00:25:11.983 HYPERVISOR: exec_cmd: vm set_disk0 Porto 0 
+Jan 23 00:25:11.983 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:25:11.984 HYPERVISOR: exec_cmd: vm set_idle_pc Porto 0x602361d8 
+Jan 23 00:25:11.984 HYPERVISOR: exec_cmd: vm set_ios Porto /home/goncalo/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jan 23 00:25:11.984 HYPERVISOR: exec_cmd: c3725 set_mac_addr Porto c203.67c7.0000 
+Jan 23 00:25:11.984 HYPERVISOR: exec_cmd: vm set_nvram Porto 256 
+Jan 23 00:25:11.985 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:25:11.985 HYPERVISOR: exec_cmd: vm slot_add_binding Porto 1 0 NM-1FE-TX 
+Jan 23 00:25:11.985 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:25:11.985 HYPERVISOR: exec_cmd: vm slot_add_binding Porto 2 0 NM-1FE-TX 
+Jan 23 00:25:12.614 HYPERVISOR: exec_cmd: nio create_udp udp-ecb51bd3-576f-4bcc-b73f-9558f5147bf1 10004 127.0.0.1 10005 
+Jan 23 00:25:12.828 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Porto 0 1 udp-ecb51bd3-576f-4bcc-b73f-9558f5147bf1 
+Jan 23 00:25:12.829 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:25:14.993 HYPERVISOR: exec_cmd: nio create_udp udp-ca74fe7a-2788-4d24-b0bd-1672d35cb74e 10044 127.0.0.1 10045 
+Jan 23 00:25:14.994 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Porto 0 0 udp-ca74fe7a-2788-4d24-b0bd-1672d35cb74e 
+Jan 23 00:25:14.994 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:25:15.081 HYPERVISOR: exec_cmd: nio create_udp udp-dfd14501-894d-4585-843a-aa4ea3062731 10048 127.0.0.1 10049 
+Jan 23 00:25:15.082 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Porto 1 0 udp-dfd14501-894d-4585-843a-aa4ea3062731 
+Jan 23 00:25:15.082 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:29:57.017 HYPERVISOR: exec_cmd: vm set_ghost_status Porto 2 
+Jan 23 00:29:57.019 HYPERVISOR: exec_cmd: vm set_ghost_file Porto /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/c3725-advipservicesk9-mz.124-21.image-128.ghost 
+Jan 23 00:29:57.020 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:29:57.022 HYPERVISOR: exec_cmd: vm set_config Porto configs/i3_startup-config.cfg 
+Jan 23 00:29:57.022 HYPERVISOR: exec_cmd: vm start Porto 
+Jan 23 00:40:04.824 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:40:04.824 HYPERVISOR: exec_cmd: vm stop Porto 
+Jan 23 00:40:04.900 VM: VM Porto shutdown.
+Jan 23 00:40:04.901 HYPERVISOR: exec_cmd: vm extract_config Porto 
+Jan 23 00:40:05.494 HYPERVISOR: exec_cmd: vm get_status Porto 
+Jan 23 00:40:05.494 HYPERVISOR: exec_cmd: vm extract_config Porto 
+Jan 23 00:40:05.494 HYPERVISOR: exec_cmd: vm delete Porto 
+Jan 23 00:40:05.494 VM: VM Porto destroyed.
+Jan 23 00:40:05.495 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 23 00:40:05.758 HYPERVISOR: Stopped.
+Jan 23 00:40:05.759 GENERAL: reset done.

@@ -1,0 +1,46 @@
+Jan 23 00:25:12.003 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Jan 23 00:25:12.003 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 48015.
+Jan 23 00:25:12.012 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 23 00:25:12.013 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips 
+Jan 23 00:25:12.013 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips
+Jan 23 00:25:12.013 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/7e619c10-0bc7-4f0e-acb6-6dfe2f60b21f 
+Jan 23 00:25:12.013 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/7e619c10-0bc7-4f0e-acb6-6dfe2f60b21f
+Jan 23 00:25:12.013 HYPERVISOR: exec_cmd: vm create Lisboa 4 c3725 
+Jan 23 00:25:12.013 VM: VM Lisboa created.
+Jan 23 00:25:12.013 HYPERVISOR: exec_cmd: vm set_con_tcp_port Lisboa 5020 
+Jan 23 00:25:12.014 HYPERVISOR: exec_cmd: c3725 get_mac_addr Lisboa 
+Jan 23 00:25:12.014 HYPERVISOR: exec_cmd: vm set_disk0 Lisboa 0 
+Jan 23 00:25:12.014 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:25:12.014 HYPERVISOR: exec_cmd: vm set_idle_pc Lisboa 0x602361d8 
+Jan 23 00:25:12.014 HYPERVISOR: exec_cmd: vm set_ios Lisboa /home/goncalo/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jan 23 00:25:12.015 HYPERVISOR: exec_cmd: c3725 set_mac_addr Lisboa c204.67f3.0000 
+Jan 23 00:25:12.015 HYPERVISOR: exec_cmd: vm set_nvram Lisboa 256 
+Jan 23 00:25:12.015 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:25:12.015 HYPERVISOR: exec_cmd: vm slot_add_binding Lisboa 1 0 NM-1FE-TX 
+Jan 23 00:25:12.015 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:25:12.015 HYPERVISOR: exec_cmd: vm slot_add_binding Lisboa 2 0 NM-1FE-TX 
+Jan 23 00:25:13.618 HYPERVISOR: exec_cmd: nio create_udp udp-eabb9f76-00f2-4ff0-8311-47928ea6fad9 10020 127.0.0.1 10021 
+Jan 23 00:25:13.828 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Lisboa 0 1 udp-eabb9f76-00f2-4ff0-8311-47928ea6fad9 
+Jan 23 00:25:13.830 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:25:15.257 HYPERVISOR: exec_cmd: nio create_udp udp-6fde2173-df3f-4681-84cc-566e0c90a0c2 10060 127.0.0.1 10061 
+Jan 23 00:25:15.258 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Lisboa 0 0 udp-6fde2173-df3f-4681-84cc-566e0c90a0c2 
+Jan 23 00:25:15.258 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:25:15.336 HYPERVISOR: exec_cmd: nio create_udp udp-87c5c857-b1a4-44e8-9213-2e0077db5c18 10064 127.0.0.1 10065 
+Jan 23 00:25:15.337 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Lisboa 1 0 udp-87c5c857-b1a4-44e8-9213-2e0077db5c18 
+Jan 23 00:25:15.337 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:29:57.277 HYPERVISOR: exec_cmd: vm set_ghost_status Lisboa 2 
+Jan 23 00:29:57.279 HYPERVISOR: exec_cmd: vm set_ghost_file Lisboa /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/c3725-advipservicesk9-mz.124-21.image-128.ghost 
+Jan 23 00:29:57.279 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:29:57.280 HYPERVISOR: exec_cmd: vm set_config Lisboa configs/i4_startup-config.cfg 
+Jan 23 00:29:57.280 HYPERVISOR: exec_cmd: vm start Lisboa 
+Jan 23 00:40:04.907 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:40:04.907 HYPERVISOR: exec_cmd: vm stop Lisboa 
+Jan 23 00:40:05.019 VM: VM Lisboa shutdown.
+Jan 23 00:40:05.021 HYPERVISOR: exec_cmd: vm extract_config Lisboa 
+Jan 23 00:40:05.466 HYPERVISOR: exec_cmd: vm get_status Lisboa 
+Jan 23 00:40:05.467 HYPERVISOR: exec_cmd: vm extract_config Lisboa 
+Jan 23 00:40:05.467 HYPERVISOR: exec_cmd: vm delete Lisboa 
+Jan 23 00:40:05.467 VM: VM Lisboa destroyed.
+Jan 23 00:40:05.468 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 23 00:40:05.772 HYPERVISOR: Stopped.
+Jan 23 00:40:05.773 GENERAL: reset done.

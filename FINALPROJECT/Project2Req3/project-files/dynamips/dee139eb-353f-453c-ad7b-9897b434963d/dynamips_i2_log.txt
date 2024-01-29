@@ -1,0 +1,49 @@
+Jan 23 00:25:11.934 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Jan 23 00:25:11.934 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 44127.
+Jan 23 00:25:11.942 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 23 00:25:11.943 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips 
+Jan 23 00:25:11.943 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips
+Jan 23 00:25:11.943 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/dee139eb-353f-453c-ad7b-9897b434963d 
+Jan 23 00:25:11.943 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/dee139eb-353f-453c-ad7b-9897b434963d
+Jan 23 00:25:11.943 HYPERVISOR: exec_cmd: vm create Londres 2 c3725 
+Jan 23 00:25:11.943 VM: VM Londres created.
+Jan 23 00:25:11.944 HYPERVISOR: exec_cmd: vm set_con_tcp_port Londres 5018 
+Jan 23 00:25:11.944 HYPERVISOR: exec_cmd: c3725 get_mac_addr Londres 
+Jan 23 00:25:11.945 HYPERVISOR: exec_cmd: vm set_disk0 Londres 0 
+Jan 23 00:25:11.945 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:25:11.945 HYPERVISOR: exec_cmd: vm set_idle_pc Londres 0x602361d8 
+Jan 23 00:25:11.946 HYPERVISOR: exec_cmd: vm set_ios Londres /home/goncalo/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jan 23 00:25:11.946 HYPERVISOR: exec_cmd: c3725 set_mac_addr Londres c202.67a6.0000 
+Jan 23 00:25:11.946 HYPERVISOR: exec_cmd: vm set_nvram Londres 256 
+Jan 23 00:25:11.947 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:25:11.947 HYPERVISOR: exec_cmd: vm slot_add_binding Londres 1 0 NM-1FE-TX 
+Jan 23 00:25:11.947 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:25:11.948 HYPERVISOR: exec_cmd: vm slot_add_binding Londres 2 0 NM-1FE-TX 
+Jan 23 00:25:12.366 HYPERVISOR: exec_cmd: nio create_udp udp-e433782e-ce60-4c2f-89eb-77ecaa24eef6 10002 127.0.0.1 10003 
+Jan 23 00:25:12.579 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Londres 0 1 udp-e433782e-ce60-4c2f-89eb-77ecaa24eef6 
+Jan 23 00:25:12.580 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:25:12.926 HYPERVISOR: exec_cmd: nio create_udp udp-44938088-80ad-4a9e-9aa3-8e462b597671 10008 127.0.0.1 10009 
+Jan 23 00:25:12.927 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Londres 2 0 udp-44938088-80ad-4a9e-9aa3-8e462b597671 
+Jan 23 00:25:12.928 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:25:15.188 HYPERVISOR: exec_cmd: nio create_udp udp-f41a37f2-7db0-474f-bc78-2c787fd4190c 10056 127.0.0.1 10057 
+Jan 23 00:25:15.190 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Londres 0 0 udp-f41a37f2-7db0-474f-bc78-2c787fd4190c 
+Jan 23 00:25:15.190 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:25:15.345 HYPERVISOR: exec_cmd: nio create_udp udp-511d70b0-4d02-463c-89b9-92e721c7843f 10066 127.0.0.1 10067 
+Jan 23 00:25:15.346 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Londres 1 0 udp-511d70b0-4d02-463c-89b9-92e721c7843f 
+Jan 23 00:25:15.346 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:29:57.014 HYPERVISOR: exec_cmd: vm set_ghost_status Londres 2 
+Jan 23 00:29:57.016 HYPERVISOR: exec_cmd: vm set_ghost_file Londres /home/goncalo/Disciplinas/Project2Req3/project-files/dynamips/c3725-advipservicesk9-mz.124-21.image-128.ghost 
+Jan 23 00:29:57.017 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:29:57.018 HYPERVISOR: exec_cmd: vm set_config Londres configs/i2_startup-config.cfg 
+Jan 23 00:29:57.020 HYPERVISOR: exec_cmd: vm start Londres 
+Jan 23 00:40:04.823 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:40:04.824 HYPERVISOR: exec_cmd: vm stop Londres 
+Jan 23 00:40:04.961 VM: VM Londres shutdown.
+Jan 23 00:40:04.962 HYPERVISOR: exec_cmd: vm extract_config Londres 
+Jan 23 00:40:05.746 HYPERVISOR: exec_cmd: vm get_status Londres 
+Jan 23 00:40:05.747 HYPERVISOR: exec_cmd: vm extract_config Londres 
+Jan 23 00:40:05.748 HYPERVISOR: exec_cmd: vm delete Londres 
+Jan 23 00:40:05.748 VM: VM Londres destroyed.
+Jan 23 00:40:05.749 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 23 00:40:06.199 HYPERVISOR: Stopped.
+Jan 23 00:40:06.199 GENERAL: reset done.

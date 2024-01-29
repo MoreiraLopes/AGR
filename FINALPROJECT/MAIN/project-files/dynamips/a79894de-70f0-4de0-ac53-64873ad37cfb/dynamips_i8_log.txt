@@ -1,0 +1,39 @@
+Jan 22 15:02:29.695 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Jan 22 15:02:29.695 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 44693.
+Jan 22 15:02:29.705 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 22 15:02:29.705 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2ini/project-files/dynamips 
+Jan 22 15:02:29.705 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2ini/project-files/dynamips
+Jan 22 15:02:29.705 HYPERVISOR: exec_cmd: hypervisor working_dir /home/goncalo/Disciplinas/Project2ini/project-files/dynamips/307611ca-0477-44e2-83fb-771604c69260 
+Jan 22 15:02:29.705 GENERAL: working_dir=/home/goncalo/Disciplinas/Project2ini/project-files/dynamips/307611ca-0477-44e2-83fb-771604c69260
+Jan 22 15:02:29.705 HYPERVISOR: exec_cmd: vm create Vigo 1 c3725 
+Jan 22 15:02:29.705 VM: VM Vigo created.
+Jan 22 15:02:29.706 HYPERVISOR: exec_cmd: vm set_con_tcp_port Vigo 5017 
+Jan 22 15:02:29.706 HYPERVISOR: exec_cmd: c3725 get_mac_addr Vigo 
+Jan 22 15:02:29.706 HYPERVISOR: exec_cmd: vm set_disk0 Vigo 0 
+Jan 22 15:02:29.706 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:02:29.706 HYPERVISOR: exec_cmd: vm set_idle_pc Vigo 0x602361d8 
+Jan 22 15:02:29.707 HYPERVISOR: exec_cmd: vm set_ios Vigo /home/goncalo/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jan 22 15:02:29.707 HYPERVISOR: exec_cmd: c3725 set_mac_addr Vigo c201.677c.0000 
+Jan 22 15:02:29.707 HYPERVISOR: exec_cmd: vm set_nvram Vigo 256 
+Jan 22 15:02:29.707 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:02:29.707 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 1 0 NM-1FE-TX 
+Jan 22 15:02:29.708 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:02:29.708 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 2 0 NM-1FE-TX 
+Jan 22 15:02:32.438 HYPERVISOR: exec_cmd: nio create_udp udp-31ee3137-b178-48aa-bcb5-2ac72ca92689 10080 127.0.0.1 10081 
+Jan 22 15:02:32.649 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Vigo 0 0 udp-31ee3137-b178-48aa-bcb5-2ac72ca92689 
+Jan 22 15:02:32.650 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:02:32.830 HYPERVISOR: exec_cmd: nio create_udp udp-d37f92c6-8949-4bc2-8694-2182fed1ff06 10090 127.0.0.1 10091 
+Jan 22 15:02:32.831 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Vigo 0 1 udp-d37f92c6-8949-4bc2-8694-2182fed1ff06 
+Jan 22 15:02:32.831 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:02:32.892 HYPERVISOR: exec_cmd: nio create_udp udp-bc63b343-a628-4ddd-847b-581a6798c5a5 10094 127.0.0.1 10095 
+Jan 22 15:02:32.893 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Vigo 1 0 udp-bc63b343-a628-4ddd-847b-581a6798c5a5 
+Jan 22 15:02:32.893 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:37:41.640 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:37:41.640 HYPERVISOR: exec_cmd: vm extract_config Vigo 
+Jan 22 15:37:41.787 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 22 15:37:41.787 HYPERVISOR: exec_cmd: vm extract_config Vigo 
+Jan 22 15:37:41.788 HYPERVISOR: exec_cmd: vm delete Vigo 
+Jan 22 15:37:41.788 VM: VM Vigo destroyed.
+Jan 22 15:37:41.789 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 22 15:37:41.955 HYPERVISOR: Stopped.
+Jan 22 15:37:41.955 GENERAL: reset done.
